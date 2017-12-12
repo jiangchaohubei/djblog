@@ -25,7 +25,7 @@ SECRET_KEY = 'jk9c=(99bdf4!f&rhd(g89c#w5)q+116tv2^dd_1$j_2*&qznz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -37,12 +37,13 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog',
 )
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'djblog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR +"/static",],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,18 +77,28 @@ WSGI_APPLICATION = 'djblog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'djblog',
+        'USER': 'root',  #root                                                                                             #vegauser
+        'PASSWORD': 'root',   #root                                                                                       #DBVega568SQL
+        'HOST': 'localhost',
+        'PORT': '3306',
+    },
+    'innodb': {
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': { 'init_command': 'SET storage_engine=INNODB;' }
+    },
+    # 'TEST_CHARSET': 'utf8',
+    # 'TEST_COLLATION': 'utf8_general_ci',
 }
 
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -99,4 +110,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
+
 STATIC_URL = '/static/'
+STATIC_ROOT = 'C:\mytools\python-django\Python27\Lib\site-packages\Django-1.8.18-py2.7.egg\django\contrib\\admin\static'
+
