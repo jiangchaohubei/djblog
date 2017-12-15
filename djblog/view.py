@@ -8,5 +8,5 @@ from django.views.decorators.csrf import csrf_protect
 def index(request):
     context = {}
 
-    return render(request, '/templates/index.html', context)
+    return render(request, 'templates/index.html', context)
 
