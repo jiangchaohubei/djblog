@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding:utf8 -*-
 """
 Django settings for djblog project.
 
@@ -110,6 +112,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+EACHPAGE_NUMBER=1   #分页每页数量
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
