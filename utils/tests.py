@@ -9,7 +9,7 @@ class paginatorTest(TestCase):
         pass
 
     def test_getPages(self):
-        paginator,objectList=getPages(16,[1,2,2,2,2,2,2,2,2,2,2,2,2,2,2])
+        paginator,objectList=getPages(2,[1,2,2,2,2,2,2,2,2,2,2,2,2,2,2])
         print paginator.page_range_ex
 
     def tearDown(self):

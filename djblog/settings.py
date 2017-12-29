@@ -114,6 +114,7 @@ USE_TZ = True
 
 EACHPAGE_NUMBER=1   #分页每页数量
 
+DEBUG = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 

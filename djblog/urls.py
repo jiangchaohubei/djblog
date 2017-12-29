@@ -19,4 +19,5 @@ import view
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^main$', view.index),
+    url(r'^blog/', include('blog.urls')),
 ]

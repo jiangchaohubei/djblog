@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block tile %}{% endblock %}</title>
+
+    {% block style %}{% endblock %}
+
+    {% block script %}{% endblock %}
 </head>
 <body>
     <h1>a simple blog</h1>
     {% block content %}
+    {# 页面主体 #}
     {% endblock %}
     {% block footer %}
     {# 任何每个页面都可能修改的文本区域的页脚 #}
